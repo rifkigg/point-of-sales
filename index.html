@@ -13,12 +13,18 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav>
-      <div class="container">
+      <div class="container justify-content-between m-20">
         <div class="logo">
-          <h3>Point Of Sales | Pusat</h3>
+          <h3 class="m-0">Point Of Sales | Pusat</h3>
         </div>
         <div class="tanggal-jam">
           <div class="date">
@@ -64,51 +70,66 @@
       </div>
     </main>
 
-    <footer>
-      <div class="btn-logout">
-        <p>Magang</p>
-        <div class="logout">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <p>Logout</p>
-        </div>
-        <p class="shortcut-btn">(Shift + Esc)</p>
-      </div>
-      <div class="btn-cetakharian biru">
-        <!-- Icon -->
-        <p>CETAK HARIAN</p>
-        <p class="shortcut-btn">(F8)</p>
-      </div>
-      <div class="btn-lihatpenjualan biru">
-        <!-- Icon -->
-        <p>LIHAT PENJUALAN</p>
-        <p class="shortcut-btn">(F9)</p>
-      </div>
-      <div class="btn-pelangganumu light-gray">
-        <p>Pelanggan</p>
-        <p>Umum</p>
-        <!-- Icon -->
-      </div>
-      <div class="btn-promo light-gray">
-        <!-- Flex -->
-        <p>0 Promo aktif</p>
-        <!-- Icon -->
-      </div>
-      <div class="info">
-        <div class="subtotal">
-          <p>Subtotal</p>
-          <p>0</p>
-        </div>
-        <div class="total">
-          <p>Total</p>
-          <p>0</p>
-        </div>
-      </div>
-      <div class="btn-bayar">
-        <!-- Flex -->
-        <!-- Icon -->
-        <p>BAYAR</p>
-        <p class="shortcut-btn">(F7)</p>
-      </div>
+    <footer class="d-flex">
+      <a href="#"
+        ><div class="btn-logout rounded">
+          <p class="text-decoration-none text-dark">Magang</p>
+          <div class="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket text-info "></i>
+            <p class="text-decoration-none text-info fw-semibold">Logout</p>
+          </div>
+          <p class="shortcut-btn">(Shift + Esc)</p>
+        </div></a
+      >
+      <a href="#"
+        ><div class="btn-cetakharian biru rounded">
+          <!-- Icon -->
+          <p class="m-0 text-decoration-none text-white">CETAK HARIAN</p>
+          <p class="shortcut-btn">(F8)</p>
+        </div></a
+      >
+      <a href="#"
+        ><div class="btn-lihatpenjualan biru rounded">
+          <!-- Icon -->
+          <p class="m-0 text-decoration-none text-white">LIHAT PENJUALAN</p>
+          <p class="shortcut-btn">(F9)</p>
+        </div></a
+      >
+      <a href="#"
+        ><div class="btn-pelangganumu light-gray rounded">
+          <p class="m-0 text-decoration-none text-dark">Pelanggan</p>
+          <p class="m-0 text-decoration-none text-dark">Umum</p>
+          <!-- Icon -->
+        </div></a
+      >
+      <a href="#"
+        ><div class="btn-promo light-gray d-flex rounded">
+          <!-- Flex -->
+          <p class="m-0 text-decoration-none text-dark">0 Promo aktif</p>
+          <!-- Icon -->
+        </div></a
+      >
+      <a href="#"
+        ><div class="info rounded">
+          <div class="subtotal">
+            <p class="m-0 text-decoration-none text-dark">Subtotal</p>
+            <p class="m-0 text-decoration-none text-dark">0</p>
+          </div>
+          <div class="total">
+            <p class="m-0 text-decoration-none text-dark">Total</p>
+            <p class="m-0 text-decoration-none text-dark">0</p>
+          </div>
+        </div></a
+      >
+
+      <a href="#"
+        ><div class="btn-bayar rounded">
+          <!-- Flex -->
+          <!-- Icon -->
+          <p class="m-0 text-decoration-none text-white">BAYAR</p>
+          <p class="shortcut-btn text-white">(F7)</p>
+        </div></a
+      >
     </footer>
 
     <script src="script.js"></script>
