@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav>
@@ -70,7 +75,8 @@
           style="gap: 12px"
         >
           <a
-            onclick=""
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
             class="fw-500 btn-fitur h-100 w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center"
             ><img
               src="images/product-icon.svg"
@@ -82,7 +88,8 @@
           >
           <div class="d-flex justify-content-between w-100 h-100">
             <a
-              onclick="open_save_draft_modal()"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
               class="fw-500 btn-fitur bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
@@ -97,7 +104,8 @@
               </div>
             </a>
             <a
-              onclick="open_draft_modal()"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
               class="fw-500 btn-fitur bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
@@ -113,7 +121,8 @@
             </a>
           </div>
           <a
-            onclick="open_promo_modal()"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
             class="fw-500 btn-fitur w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
             ><img
               src="images/promo-icon.svg"
@@ -125,7 +134,8 @@
           </a>
 
           <a
-            onclick="open_customer_modal()"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
             class="fw-500 btn-fitur w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
           >
             <img
@@ -146,6 +156,8 @@
       <div class="wrap d-flex align-items-stretch justify-content-between">
         <a
           href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
           class="btn-logout btn-footer font-size-14 lengkung d-flex flex-column justify-content-center align-items-start"
           ><div>
             <p class="text-decoration-none text-dark bold">Magang</p>
@@ -156,7 +168,11 @@
             <p class="shortcut-btn">(Shift + Esc)</p>
           </div></a
         >
-        <a href="#" class="btn-cetakharian biru btn-footer lengkung"
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          class="btn-cetakharian biru btn-footer lengkung"
           ><div
             class="d-flex flex-column justify-content-center align-items-center"
           >
@@ -170,7 +186,11 @@
             <p class="shortcut-btn">(F8)</p>
           </div></a
         >
-        <a href="#" class="btn-lihatpenjualan biru btn-footer lengkung"
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          class="btn-lihatpenjualan biru btn-footer lengkung"
           ><div
             class="d-flex flex-column justify-content-center align-items-center"
           >
@@ -183,6 +203,8 @@
         >
         <a
           href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
           class="btn-pelangganumu btn-footer lengkung light-gray d-flex justify-content-center flex-column"
           ><div>
             <p class="m-0 text-decoration-none text-dark">Pelanggan</p>
@@ -196,6 +218,8 @@
         ></a>
         <a
           href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
           class="btn-promo btn-footer lengkung light-gray d-flex justify-content-center align-items-center"
           ><div class="d-flex gap-10">
             <!-- Flex -->
@@ -225,6 +249,8 @@
       </div>
       <a
         href="#"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
         class="btn-bayar btn-footer lengkung-bayar d-flex align-items-center justify-content-center"
         ><div
           class="info-text d-flex align-items-center justify-content-center gap-10 bayar"
@@ -236,6 +262,54 @@
         </div></a
       >
     </footer>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Modal title
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Oke</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
