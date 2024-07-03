@@ -102,6 +102,18 @@ table {
   background-color: var(--light-blue2);
 }
 
+.tabel {
+  width: 60%;
+}
+
+.fitur {
+  width: 40%;
+}
+
+.tombol a {
+  width: 100%;
+}
+
 .no-data p {
   background-color: var(--light-blue3);
   color: black;
@@ -113,11 +125,14 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
+  margin: 0 15px;
 }
 
 .btn-logout {
   background-color: var(--light-blue3);
   padding: 6px 16px;
+  width: 15%;
 }
 
 .btn-logout p {
@@ -136,18 +151,83 @@ footer {
   margin: 0;
 }
 
+.umum {
+  font-weight: bolder;
+}
+
 .biru {
   background-color: var(--dark-blue);
-  padding: 6px 24px;
+  padding: 6px 8px;
   color: white;
+  width: 10%;
 }
 
 .light-gray {
   background-color: var(--light-grey);
   padding: 8px 16px;
+  width: 15%;
+  font-size: 14px;
 }
 
 .btn-bayar {
   background-color: #f56e1d;
   padding: 6px 12px;
+  width: 30%;
+  height: 90px;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.info {
+  width: 185px;
+}
+
+.fs-4 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.text-none {
+  text-decoration: none;
+}
+
+.total {
+  font-weight: bolder;
+}
+
+.float-end {
+  float: right;
+  margin-right: 20px;
+}
+
+.info-text {
+  width: 100%;
+}
+
+.lengkung {
+  border-radius: 8px;
+}
+
+.lengkung-bayar {
+  border-radius: 15px;
+}
+
+.btn-footer:hover {
+  text-decoration: none;
 }
