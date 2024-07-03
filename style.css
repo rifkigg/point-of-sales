@@ -65,6 +65,14 @@ nav {
   background-color: var(--biru);
 }
 
+.p-10 {
+  padding: 10px 20px;
+}
+
+.height-25{
+  height: 25%;
+}
+
 .header {
   width: 100%;
   display: flex;
@@ -194,7 +202,7 @@ footer {
   background-color: var(--blue2);
   padding: 6px 8px;
   color: white;
-  width: 10%;
+  width: 11%;
 }
 
 .light-gray {
