@@ -7,7 +7,7 @@
 
 :root {
   --dark-blue: #153064;
-  --blue: #1f4080;
+  --biru: #1f4080;
   --blue2: #2c529d;
   --light-blue: #294e96;
   --light-blue2: #4a71bd;
@@ -36,18 +36,17 @@ nav {
   background-color: var(--dark-blue);
   color: var(--putih);
   padding: 10px auto 0 auto;
-}
-
-.container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  padding: 0 1.5rem;
 }
 
 .tanggal-jam {
   display: flex;
   align-items: center;
+  /* margin-right: 50px; */
 }
 
 .tanggal-jam p {
@@ -56,10 +55,14 @@ nav {
 }
 
 .tanggal-jam .date {
-  background-color: var(--light-blue2);
+  background-color: var(--light-blue);
 }
 .tanggal-jam .time {
-  background-color: var(--light-blue);
+  background-color: var(--biru);
+}
+
+.table {
+  background-color: var(--biru);
 }
 
 .header {
