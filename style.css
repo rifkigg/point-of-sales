@@ -65,16 +65,18 @@ nav {
 .header {
   width: 100%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
+  background-color: var(--dark-grey);
 }
 
 .header .scan {
-  width: 100%;
+  width: 50%;
   padding: 16px 24px;
 }
 
 .header .total {
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,16 +84,30 @@ nav {
   font-size: 24px;
 }
 
-.header .total p {
+.header .total h1 {
   margin: 0;
 }
 
-.header .total p:last-child {
+.header .total h1:last-child {
   font-weight: bolder;
 }
 
 .header .scan input {
   width: 100%;
+  position: relative;
+}
+
+.input {
+  position: relative;
+}
+
+.icon-scan {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Atur posisi logo scan di sebelah kiri input */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 25px;
 }
 
 .shortcut-btn {
@@ -99,7 +115,8 @@ nav {
 }
 
 main {
-  margin-bottom: 30px;
+  margin: 30px 0;
+  gap: 50px;
 }
 
 table {
@@ -139,9 +156,9 @@ table {
 
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: stretch;
-  gap: 20px;
+  gap: 50px;
 }
 
 .btn-logout {
@@ -202,7 +219,7 @@ footer {
 }
 
 .fs-4 {
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -245,6 +262,11 @@ footer {
 
 .btn-footer:hover {
   text-decoration: none;
+}
+
+.btn-fitur:hover {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .wrap {

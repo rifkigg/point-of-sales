@@ -18,7 +18,7 @@
     <nav>
       <div class="container">
         <div class="logo">
-          <h3>Point Of Sales | Pusat</h3>
+          <h6>Point Of Sales | Pusat</h6>
         </div>
         <div class="tanggal-jam">
           <div class="date">
@@ -33,19 +33,24 @@
 
     <section class="header">
       <div class="scan">
-        <input type="text" class="form-control" />
+        <div class="input">
+          <a href="#"
+            ><img class="icon-scan" src="images/barcode-icon.svg" alt="scan"
+          /></a>
+          <input type="text" class="form-control" />
+        </div>
         <p class="shortcut-btn">(F1)</p>
       </div>
 
       <div class="total">
-        <p>Total</p>
-        <p>0</p>
+        <h3>Total</h3>
+        <h1>0</h1>
       </div>
     </section>
 
     <main class="d-flex justify-content-around w-100">
       <div class="tabel">
-        <table class="table table-striped mb-0 fw-500 text-white">
+        <table class="table table-striped mb-0 fw-500 btn-fitur text-white">
           <tr>
             <th>No.</th>
             <th>Kode Item</th>
@@ -66,7 +71,7 @@
         >
           <a
             onclick=""
-            class="fw-500 h-100 w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center"
+            class="fw-500 btn-fitur h-100 w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center"
             ><img
               src="images/product-icon.svg"
               style="height: 30px"
@@ -78,7 +83,7 @@
           <div class="d-flex justify-content-between w-100 h-100">
             <a
               onclick="open_save_draft_modal()"
-              class="fw-500 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
+              class="fw-500 btn-fitur bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
               <img
@@ -93,7 +98,7 @@
             </a>
             <a
               onclick="open_draft_modal()"
-              class="fw-500 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
+              class="fw-500 btn-fitur bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
               <img
@@ -109,7 +114,7 @@
           </div>
           <a
             onclick="open_promo_modal()"
-            class="fw-500 w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
+            class="fw-500 btn-fitur w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
             ><img
               src="images/promo-icon.svg"
               style="height: 30px"
@@ -121,7 +126,7 @@
 
           <a
             onclick="open_customer_modal()"
-            class="fw-500 w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
+            class="fw-500 btn-fitur w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
           >
             <img
               src="images/member-icon.svg"
@@ -137,7 +142,7 @@
       </div>
     </main>
 
-    <footer class="d-flex align-items-stretch">
+    <footer class="d-flex justify-content-around align-items-stretch">
       <div class="wrap d-flex align-items-stretch justify-content-between">
         <a
           href="#"
