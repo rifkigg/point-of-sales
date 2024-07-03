@@ -65,17 +65,18 @@ nav {
 .header {
   width: 100%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 10px;
+  background-color: var(--dark-grey);
 }
 
 .header .scan {
-  width: 100%;
+  width: 65%;
   padding: 16px 24px;
 }
 
 .header .total {
-  width: 100%;
+  width: 35%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,7 +93,21 @@ nav {
 }
 
 .header .scan input {
-  width: 100%;
+  width: 65%;
+  position: relative;
+}
+
+.input {
+  position: relative;
+}
+
+.icon-scan {
+  position: absolute;
+  top: 50%;
+  right: 36%; /* Atur posisi logo scan di sebelah kiri input */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 25px;
 }
 
 .shortcut-btn {
@@ -100,7 +115,7 @@ nav {
 }
 
 main {
-  margin-bottom: 30px;
+  margin: 30px 0;
   gap: 50px;
 }
 
