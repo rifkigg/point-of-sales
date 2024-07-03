@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -25,10 +26,10 @@
 }
 
 .shortcut-btn {
-    color: #f56e1d;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 1vw;
+  color: #f56e1d;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1vw;
 }
 
 nav {
@@ -50,15 +51,15 @@ nav {
 }
 
 .tanggal-jam p {
-    margin: 0;
-    padding: 10px;
+  margin: 0;
+  padding: 10px;
 }
 
 .tanggal-jam .date {
-    background-color: var(--light-blue2);
+  background-color: var(--light-blue2);
 }
 .tanggal-jam .time {
-    background-color: var(--light-blue);
+  background-color: var(--light-blue);
 }
 
 .header {
@@ -109,40 +110,44 @@ table {
 }
 
 footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-logout {
-    background-color: var(--light-blue3);
+  background-color: var(--light-blue3);
+  padding: 6px 16px;
 }
 
 .btn-logout p {
-    margin: 0;
+  margin: 0;
 }
 
 .logout {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #2c529d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #2c529d;
+  margin: 4px 0;
 }
 
 .logout p {
-    margin: 0;
+  margin: 0;
 }
 
 .biru {
-    background-color: var(--dark-blue);
-
-    color: white;
+  background-color: var(--dark-blue);
+  padding: 6px 24px;
+  color: white;
 }
 
 .light-gray {
-    background-color: var(--light-grey);
+  background-color: var(--light-grey);
+  padding: 8px 16px;
 }
 
 .btn-bayar {
-    background-color: #f56e1d;
+  background-color: #f56e1d;
+  padding: 6px 12px;
 }
