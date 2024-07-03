@@ -71,12 +71,12 @@ nav {
 }
 
 .header .scan {
-  width: 65%;
+  width: 50%;
   padding: 16px 24px;
 }
 
 .header .total {
-  width: 35%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,16 +84,16 @@ nav {
   font-size: 24px;
 }
 
-.header .total p {
+.header .total h1 {
   margin: 0;
 }
 
-.header .total p:last-child {
+.header .total h1:last-child {
   font-weight: bolder;
 }
 
 .header .scan input {
-  width: 65%;
+  width: 100%;
   position: relative;
 }
 
@@ -104,7 +104,7 @@ nav {
 .icon-scan {
   position: absolute;
   top: 50%;
-  right: 36%; /* Atur posisi logo scan di sebelah kiri input */
+  right: 10px; /* Atur posisi logo scan di sebelah kiri input */
   transform: translateY(-50%);
   z-index: 10;
   width: 25px;
@@ -262,6 +262,11 @@ footer {
 
 .btn-footer:hover {
   text-decoration: none;
+}
+
+.btn-fitur:hover {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .wrap {
