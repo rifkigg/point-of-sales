@@ -60,7 +60,7 @@
             <th>No.</th>
             <th>Kode Item</th>
             <th>Nama Item</th>
-            <th>QTY</th>
+            <th>Qty</th>
             <th>Harga</th>
             <th>Disc.</th>
             <th>Pot.</th>
@@ -76,7 +76,7 @@
         >
           <a
             data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
+            data-bs-target="#search"
             class="fw-500 btn-fitur h-100 w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center"
             ><img
               src="images/product-icon.svg"
@@ -89,7 +89,7 @@
           <div class="d-flex justify-content-between w-100 h-100">
             <a
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
+              data-bs-target="#save"
               class="fw-500 btn-fitur bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
@@ -105,7 +105,7 @@
             </a>
             <a
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
+              data-bs-target="#open"
               class="fw-500 btn-fitur bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
@@ -122,7 +122,7 @@
           </div>
           <a
             data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
+            data-bs-target="#promo"
             class="fw-500 btn-fitur w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
             ><img
               src="images/promo-icon.svg"
@@ -135,7 +135,7 @@
 
           <a
             data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
+            data-bs-target="#pembeli"
             class="fw-500 btn-fitur w-100 bg-biru lengkung text-none text-white p-20 border-0 d-flex align-items-center justify-content-center h-100"
           >
             <img
@@ -171,7 +171,7 @@
         <a
           href="#"
           data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
+          data-bs-target="#cetak"
           class="btn-cetakharian biru btn-footer lengkung"
           ><div
             class="d-flex flex-column justify-content-center align-items-center"
@@ -186,11 +186,7 @@
             <p class="shortcut-btn">(F8)</p>
           </div></a
         >
-        <a
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          class="btn-lihatpenjualan biru btn-footer lengkung"
+        <a href="#" class="btn-lihatpenjualan biru btn-footer lengkung"
           ><div
             class="d-flex flex-column justify-content-center align-items-center"
           >
@@ -203,8 +199,6 @@
         >
         <a
           href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
           class="btn-pelangganumu btn-footer lengkung light-gray d-flex justify-content-center flex-column"
           ><div>
             <p class="m-0 text-decoration-none text-dark">Pelanggan</p>
@@ -250,7 +244,7 @@
       <a
         href="#"
         data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
+        data-bs-target="#bayar"
         class="btn-bayar btn-footer lengkung-bayar d-flex align-items-center justify-content-center"
         ><div
           class="info-text d-flex align-items-center justify-content-center gap-10 bayar"
@@ -268,14 +262,12 @@
       class="btn btn-primary"
       data-bs-toggle="modal"
       data-bs-target="#staticBackdrop"
-    >
-      Launch static backdrop modal
-    </button>
+    ></button>
 
     <!-- Modal -->
     <div
       class="modal fade"
-      id="staticBackdrop"
+      id="search"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
@@ -286,8 +278,185 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">
-              Modal title
+              Pencarian Barang
             </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Oke</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="save"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Konfirmasi Simpan Draft
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Oke</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="open"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Draft</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Oke</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="promo"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Promo Tersedia
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Oke</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="pembeli"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Pencarian Pelanggan
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Oke</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="bayar"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Bayar</h1>
             <button
               type="button"
               class="btn-close"
