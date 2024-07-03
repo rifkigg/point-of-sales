@@ -1,13 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Point OF Sales</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <h3>Point Of Sales | Pusat</h3>
+        </div>
+        <div class="tanggal-jam">
+          <div class="date">
+            <p id="currentDate"></p>
+          </div>
+          <div class="time">
+            <p id="currentTime"></p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="header">
+      <div class="scan">
+        <input type="text" />
+        <p class="shortcut-btn">(F1)</p>
+      </div>
+
+      <div class="total">
+        <p>Total</p>
+        <p>0</p>
+      </div>
+    </section>
+
+    <main>
+      <div class="table">
+        <table class="table table-striped mb-0 fw-500 text-white">
+          <tr>
+            <th>No.</th>
+            <th>Kode Item</th>
+            <th>Nama Item</th>
+            <th>QTY</th>
+            <th>Harga</th>
+            <th>Disc.</th>
+            <th>Pot.</th>
+            <th>Subtotal</th>
+          </tr>
+        </table>
+        <div class="no-data"></div>
+      </div>
+      <div class="fitur">
+        <!-- lutfi -->
+      </div>
+    </main>
+
+    <footer>
+      <div class="btn-logout">
+        <p>Magang</p>
+        <div class="logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <p>Logout</p>
+        </div>
+        <p class="shortcut-btn">(Shift + Esc)</p>
+      </div>
+      <div class="btn-cetakharian biru">
+        <!-- Icon -->
+        <p>CETAK HARIAN</p>
+        <p class="shortcut-btn">(F8)</p>
+      </div>
+      <div class="btn-lihatpenjualan biru">
+        <!-- Icon -->
+        <p>LIHAT PENJUALAN</p>
+        <p class="shortcut-btn">(F9)</p>
+      </div>
+      <div class="btn-pelangganumu light-gray">
+        <p>Pelanggan</p>
+        <p>Umum</p>
+        <!-- Icon -->
+      </div>
+      <div class="btn-promo light-gray">
+        <!-- Flex -->
+        <p>0 Promo aktif</p>
+        <!-- Icon -->
+      </div>
+      <div class="info">
+        <div class="subtotal">
+          <p>Subtotal</p>
+          <p>0</p>
+        </div>
+        <div class="total">
+          <p>Total</p>
+          <p>0</p>
+        </div>
+      </div>
+      <div class="btn-bayar">
+        <!-- Flex -->
+        <!-- Icon -->
+        <p>BAYAR</p>
+        <p class="shortcut-btn">(F7)</p>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
-</body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>

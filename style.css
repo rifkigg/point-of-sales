@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #153064;
+  --blue: #1f4080;
+  --blue2: #2c529d;
+  --light-blue: #294e96;
+  --light-blue2: #4a71bd;
+  --light-blue3: #d0e0ff;
+  --dark-grey: #ededed;
+  --light-grey: #ededed;
+  --putih: #fff;
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+}
+
+.shortcut-btn {
+    color: #f56e1d;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1vw;
+}
+
+nav {
+  background-color: var(--dark-blue);
+  color: var(--putih);
+  padding: 10px auto 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.tanggal-jam {
+  display: flex;
+  align-items: center;
+}
+
+.tanggal-jam p {
+    margin: 0;
+    padding: 10px;
+}
+
+.tanggal-jam .date {
+    background-color: var(--light-blue2);
+}
+.tanggal-jam .time {
+    background-color: var(--light-blue);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header .scan {
+  width: 100%;
+  padding: 16px 24px;
+}
+
+.header .total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 24px;
+}
+
+.header .total p {
+  margin: 0;
+}
+
+.header .total p:last-child {
+  font-weight: bolder;
+}
+
+.header .scan input {
+  width: 100%;
+}
+
+.shortcut-btn {
+  margin: 0;
+}
+
+table {
+  background-color: var(--light-blue2);
+}
+
+.no-data p {
+  background-color: var(--light-blue3);
+  color: black;
+  padding: 10px;
+  margin: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-logout {
+    background-color: var(--light-blue3);
+}
+
+.btn-logout p {
+    margin: 0;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #2c529d;
+}
+
+.logout p {
+    margin: 0;
+}
+
+.biru {
+    background-color: var(--dark-blue);
+
+    color: white;
+}
+
+.light-gray {
+    background-color: var(--light-grey);
+}
+
+.btn-bayar {
+    background-color: #f56e1d;
+}
