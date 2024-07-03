@@ -64,287 +64,16 @@
           class="col-3 d-flex flex-column justify-content-between"
           style="gap: 12px"
         >
-          <script>
-            var productsearchdata = [];
-            document.addEventListener("turbo:load", function () {
-              var timer;
-              $(".searchProductInput").keyup(function (e) {
-                if (e.key !== "Enter" || e.keyCode !== 13) {
-                  clearTimeout(timer);
-                  var ms = 100; // milliseconds
-                  var val = this.value;
-                  timer = setTimeout(function () {
-                    searchProduct(val);
-                  }, ms);
-                }
-              });
-            });
-
-            function add_to_cart(e) {
-              let data = productsearchdata.find(
-                (r) => r.id == ($(e).attr("data-id") || e)
-              );
-              data.product_discount = 0;
-              data.product_cut_price = 0;
-              console.log("add:", {
-                data,
-              });
-
-              let c_apc = $("#customer").attr("data-additionalpricecategory");
-              selected_product_data.push({
-                ...data,
-                product_quantity: 1,
-                product_price:
-                  data.additional_prices.find(
-                    (r) =>
-                      r.additional_price_category_id == c_apc &&
-                      r.additional_price_unit_id == data.unit_id
-                  )?.additional_price || data?.product_sell_price,
-              });
-              const product_modal = document.querySelector("#productModal");
-              const modal = bootstrap.Modal.getInstance(product_modal);
-
-              refresh_cart_list();
-            }
-
-            function add_promo(e) {
-              console.log(e);
-            }
-
-            function searchProduct(val) {
-              $.ajax({
-                type: "POST",
-                url: "https://poslite.bizkit.id/dashboard/product/selectajax",
-                data: {
-                  // "type": "check"
-                  search: val,
-                  page: 1,
-                  // outlet_id: '',
-                  saleable: 1,
-                },
-                success: function (response) {
-                  $(".search_product_list").html("");
-                  productsearchdata = response.data;
-
-                  response.data.map((r, i) =>
-                    $(".search_product_list").append(`
-                              <tr class="lgi">
-                                      <td>${r.product_code || "-"}</td>
-                                      <td>${r.product_name}</td>
-                                      <td class="text-end">${formatNumber(
-                                        r.product_sell_price
-                                      )}</td>
-                                      <td class="text-end">${r.product_stock} ${
-                      r.unit?.unit_name
-                    }</td>
-                                      <td class="text-end"><button data-id="${
-                                        r.id
-                                      }"  onclick="add_to_cart(this)" class="add-product">+</button></td>
-                                  </tr>
-                                  `)
-                  );
-                  // $('#productdataTable').DataTable({
-                  //     "lengthChange": false,
-                  //     language: {
-                  //         searchPlaceholder: "Masukkan ID Item atau scan barcode"
-                  //     }
-                  // });
-                },
-              });
-            }
-
-            document.addEventListener("turbo:load", function () {
-              $.ajax({
-                type: "POST",
-                url: "https://poslite.bizkit.id/dashboard/product/selectajax",
-                data: {
-                  // "type": "check"
-                  search: null,
-                  page: 1,
-                  // outlet_id: '',
-                  saleable: 1,
-                },
-                success: function (response) {
-                  $(".search_product_list").html("");
-                  productsearchdata = response.data;
-                  response.data.map((r, i) =>
-                    $(".search_product_list").append(`
-                              <tr class="lgi">
-                                      <td>${r.product_code || "-"}</td>
-                                      <td>${r.product_name}</td>
-                                      <td class="text-end">${formatNumber(
-                                        r.product_sell_price
-                                      )}</td>
-                                      <td class="text-end">${r.product_stock} ${
-                      r.unit?.unit_name
-                    }</td>
-                                      <td class="text-end"><button data-id="${
-                                        r.id
-                                      }"  onclick="add_to_cart(this)" class="add-product">+</button></td>
-                                  </tr>
-                                  `)
-                  );
-                },
-              });
-            });
-          </script>
-
-          <script>
-            var customersearchdata = [];
-            document.addEventListener("turbo:load", function () {
-              var timer;
-              $(".searchCustomerInput").keyup(function (e) {
-                if (e.key !== "Enter" || e.keyCode !== 13) {
-                  clearTimeout(timer);
-                  var ms = 100; // milliseconds
-                  var val = this.value;
-                  timer = setTimeout(function () {
-                    searchCustomer(val);
-                  }, ms);
-                }
-              });
-            });
-
-            function change_customer(e) {
-              let data = customersearchdata.find(
-                (r) => r.id == $(e).attr("data-id")
-              );
-              $(".customer_name_label").html(data.customer_name);
-              $("#customer").val(data.id);
-              $("#customer").attr(
-                "data-additionalpricecategory",
-                data.additional_price_category_id
-              );
-              let c_apc = data.additional_price_category_id;
-
-              selected_product_data = selected_product_data.map((r) => {
-                let ori_price =
-                  r?.all_unit.find(
-                    (r2) => r2.id == (r?.selected_unit || r?.unit_id)
-                  )?.product_sell_price || r?.product_sell_price;
-
-                let price =
-                  r.additional_prices.find(
-                    (r2) =>
-                      r2.additional_price_category_id == c_apc &&
-                      r2.additional_price_unit_id ==
-                        (r?.selected_unit || r?.unit_id)
-                  )?.additional_price ||
-                  ori_price ||
-                  0;
-                console.log({
-                  c_apc,
-                  additional_prices: r.additional_prices,
-                  selected_unit: r?.selected_unit || r?.unit_id,
-                  ori_price,
-                  price,
-                });
-                let pqty = parseInt(r?.product_quantity || 0);
-                let ptotal = pqty * (price || 0);
-                let product_disc_total =
-                  (ptotal * parseInt(r?.product_discount || 0)) / 100;
-                let convertion_selected = parseFloat(
-                  r?.all_unit
-                    ? r?.all_unit.find(
-                        (r2) => r2.id == (r?.selected_unit || r?.unit_id)
-                      )?.convertion
-                    : 1
-                );
-                return {
-                  ...r,
-                  product_id: parseInt(r.id),
-                  id: parseInt(r.id),
-                  product_total:
-                    ptotal - product_disc_total - (r.cut_price || 0),
-                  product_quantity_clean: pqty * convertion_selected,
-                  product_price: price,
-                };
-              });
-
-              const customer_modal = document.querySelector("#customerModal");
-              const modal = bootstrap.Modal.getInstance(customer_modal);
-              modal.hide();
-              refresh_cart_list();
-            }
-
-            function searchCustomer(val) {
-              $.ajax({
-                type: "POST",
-                url: "https://poslite.bizkit.id/dashboard/customer/selectajax",
-                data: {
-                  // "type": "check"
-                  search: val,
-                  page: 1,
-                  // outlet_id: '',
-                  saleable: 1,
-                },
-                success: function (response) {
-                  $(".search_customer_list").html("");
-                  customersearchdata = response.data;
-                  response.data.map((r) => {
-                    $(".search_customer_list").append(`
-                              <tr  class="lgi">
-                                      <td>${r.id}</td>
-                                      <td>${r.customer_name}</td>
-                                      <td class="text-end">${
-                                        r.customer_address || "-"
-                                      }</td>
-                                      <td class="text-end"><button data-id="${
-                                        r.id
-                                      }"  onclick="change_customer(this)" class="add-product">+</button></td>
-                                  </tr>
-                                  `);
-                  });
-                },
-                // $('#productdataTable').DataTable({
-                //     "lengthChange": false,
-                //     language: {
-                //         searchPlaceholder: "Masukkan ID Item atau scan barcode"
-                //     }
-                // });
-              });
-            }
-
-            document.addEventListener("turbo:load", function () {
-              $.ajax({
-                type: "POST",
-                url: "https://poslite.bizkit.id/dashboard/customer/selectajax",
-                data: {
-                  // "type": "check"
-                  search: null,
-                  page: 1,
-                  // outlet_id: '',
-                  saleable: 1,
-                },
-                success: function (response) {
-                  $(".search_customer_list").html("");
-                  customersearchdata = response.data;
-
-                  response.data.map((r) => {
-                    $(".search_customer_list").append(`
-                              <tr class="lgi">
-                                      <td>${r.id}</td>
-                                      <td>${r.customer_name}</td>
-                                      <td class="text-end">${
-                                        r.customer_address || "-"
-                                      }</td>
-                                      <td class="text-end"><button data-id="${
-                                        r.id
-                                      }"  onclick="change_customer(this)" class="add-product">+</button></td>
-                                  </tr>
-                                  `);
-                  });
-                },
-              });
-            });
-          </script>
-
           <a
             onclick=""
             class="btn btn-primary fw-500 h-100 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center"
-            ><img src="" style="height: 30px" class="me-3" />
+            ><img
+              src="images/product-icon.svg"
+              style="height: 30px"
+              class="me-3"
+            />
             CARI BARANG
-            <div class="shortcut-button ms-3">(F2)</div></a
+            <div class="shortcut-btn">(F2)</div></a
           >
           <div class="d-flex justify-content-between w-100 h-100">
             <a
@@ -352,10 +81,14 @@
               class="btn btn-primary fw-500 bg-blue2 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
-              <img src="" style="height: 23px" class="me-2" />
+              <img
+                src="images/save-icon.svg"
+                style="height: 23px"
+                class="me-2"
+              />
               <div>
                 SAVE<br />DRAFT
-                <div class="shortcut-button mt-1">(F3)</div>
+                <div class="shortcut-btn">(F3)</div>
               </div>
             </a>
             <a
@@ -363,29 +96,41 @@
               class="btn btn-primary fw-500 bg-blue2 border-0 d-flex align-items-center justify-content-center text-start mb-0"
               style="width: calc(50% - 6px)"
             >
-              <img src="" style="height: 23px" class="me-2" />
+              <img
+                src="images/draft-icon.svg"
+                style="height: 23px"
+                class="me-2"
+              />
               <div>
                 OPEN<br />DRAFT
-                <div class="shortcut-button mt-1">(F4)</div>
+                <div class="shortcut-btn">(F4)</div>
               </div>
             </a>
           </div>
           <a
             onclick="open_promo_modal()"
             class="btn btn-primary fw-500 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center h-100"
-            ><img src="" style="height: 30px" class="me-3" />
+            ><img
+              src="images/promo-icon.svg"
+              style="height: 30px"
+              class="me-3"
+            />
             DAFTAR PROMO
-            <div class="shortcut-button ms-3">(F5)</div>
+            <div class="shortcut-btn">(F5)</div>
           </a>
 
           <a
             onclick="open_customer_modal()"
             class="btn btn-primary fw-500 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center h-100"
           >
-            <img src="" style="height: 30px" class="me-3" />
+            <img
+              src="images/member-icon.svg"
+              style="height: 30px"
+              class="me-3"
+            />
             <div>
               PEMBELI
-              <div class="shortcut-button ms-3">(F6)</div>
+              <div class="shortcut-btn">(F6)</div>
             </div>
           </a>
         </div>
