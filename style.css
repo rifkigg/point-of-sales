@@ -121,6 +121,10 @@ table {
   margin: 0;
 }
 
+.fitur img {
+  padding-right: 10px;
+}
+
 footer {
   display: flex;
   justify-content: space-around;

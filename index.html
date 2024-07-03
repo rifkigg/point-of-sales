@@ -13,18 +13,12 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <nav>
-      <div class="container justify-content-between m-20">
+      <div class="container">
         <div class="logo">
-          <h3 class="m-0">Point Of Sales | Pusat</h3>
+          <h3>Point Of Sales | Pusat</h3>
         </div>
         <div class="tanggal-jam">
           <div class="date">
@@ -71,54 +65,74 @@
         <!-- <div
           class="col-3 d-flex flex-column justify-content-between tombol"
           style="gap: 12px"
-        > -->
-        <a
-          onclick=""
-          class="btn btn-primary fw-500 h-100 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center"
-          ><img src="" style="height: 30px" class="me-3" />
-          CARI BARANG
-          <div class="shortcut-button ms-3">(F2)</div></a
         >
-        <div class="d-flex justify-content-between w-100 h-100">
           <a
-            onclick="open_save_draft_modal()"
-            class="btn btn-primary fw-500 bg-blue2 border-0 d-flex align-items-center justify-content-center text-start mb-0"
-            style="width: calc(50% - 6px)"
+            onclick=""
+            class="btn btn-primary fw-500 h-100 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center"
+            ><img
+              src="images/product-icon.svg"
+              style="height: 30px"
+              class="me-3"
+            />
+            CARI BARANG
+            <div class="shortcut-btn">(F2)</div></a
           >
-            <img src="" style="height: 23px" class="me-2" />
-            <div>
-              SAVE<br />DRAFT
-              <div class="shortcut-button mt-1">(F3)</div>
-            </div>
-          </a>
+          <div class="d-flex justify-content-between w-100 h-100">
+            <a
+              onclick="open_save_draft_modal()"
+              class="btn btn-primary fw-500 bg-blue2 border-0 d-flex align-items-center justify-content-center text-start mb-0"
+              style="width: calc(50% - 6px)"
+            >
+              <img
+                src="images/save-icon.svg"
+                style="height: 23px"
+                class="me-2"
+              />
+              <div>
+                SAVE<br />DRAFT
+                <div class="shortcut-btn">(F3)</div>
+              </div>
+            </a>
+            <a
+              onclick="open_draft_modal()"
+              class="btn btn-primary fw-500 bg-blue2 border-0 d-flex align-items-center justify-content-center text-start mb-0"
+              style="width: calc(50% - 6px)"
+            >
+              <img
+                src="images/draft-icon.svg"
+                style="height: 23px"
+                class="me-2"
+              />
+              <div>
+                OPEN<br />DRAFT
+                <div class="shortcut-btn">(F4)</div>
+              </div>
+            </a>
+          </div>
           <a
-            onclick="open_draft_modal()"
-            class="btn btn-primary fw-500 bg-blue2 border-0 d-flex align-items-center justify-content-center text-start mb-0"
-            style="width: calc(50% - 6px)"
-          >
-            <img src="" style="height: 23px" class="me-2" />
-            <div>
-              OPEN<br />DRAFT
-              <div class="shortcut-button mt-1">(F4)</div>
-            </div>
+            onclick="open_promo_modal()"
+            class="btn btn-primary fw-500 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center h-100"
+            ><img
+              src="images/promo-icon.svg"
+              style="height: 30px"
+              class="me-3"
+            />
+            DAFTAR PROMO
+            <div class="shortcut-btn">(F5)</div>
           </a>
-        </div>
-        <a
-          onclick="open_promo_modal()"
-          class="btn btn-primary fw-500 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center h-100"
-          ><img src="" style="height: 30px" class="me-3" />
-          DAFTAR PROMO
-          <div class="shortcut-button ms-3">(F5)</div>
-        </a>
 
         <a
           onclick="open_customer_modal()"
           class="btn btn-primary fw-500 w-100 bg-blue2 border-0 d-flex align-items-center justify-content-center h-100"
         >
-          <img src="" style="height: 30px" class="me-3" />
+          <img
+              src="images/member-icon.svg"
+              style="height: 30px"
+              class="me-3"
+            />
           <div>
             PEMBELI
-            <div class="shortcut-button ms-3">(F6)</div>
+            <div class="shortcut-btn">(F6)</div>
           </div>
         </a>
       </div>
