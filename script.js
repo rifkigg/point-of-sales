@@ -26,11 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-<<<<<<< HEAD
-//Punya Lutfi
-=======
 // main
->>>>>>> 227b6786bd7b9c31bd862d4775f4ceac4ca1d5a1
 var productsearchdata = [];
 document.addEventListener("turbo:load", function () {
   var timer;
@@ -152,10 +148,6 @@ document.addEventListener("turbo:load", function () {
   });
 });
 
-<<<<<<< HEAD
-//Punya Lutfi 2
-=======
->>>>>>> 227b6786bd7b9c31bd862d4775f4ceac4ca1d5a1
 var customersearchdata = [];
 document.addEventListener("turbo:load", function () {
   var timer;
@@ -243,17 +235,6 @@ function searchCustomer(val) {
       customersearchdata = response.data;
       response.data.map((r) => {
         $(".search_customer_list").append(`
-<<<<<<< HEAD
-                  <tr  class="lgi">
-                          <td>${r.id}</td>
-                          <td>${r.customer_name}</td>
-                          <td class="text-end">${r.customer_address || "-"}</td>
-                          <td class="text-end"><button data-id="${
-                            r.id
-                          }"  onclick="change_customer(this)" class="add-product">+</button></td>
-                      </tr>
-                      `);
-=======
                               <tr  class="lgi">
                                       <td>${r.id}</td>
                                       <td>${r.customer_name}</td>
@@ -265,7 +246,6 @@ function searchCustomer(val) {
                                       }"  onclick="change_customer(this)" class="add-product">+</button></td>
                                   </tr>
                                   `);
->>>>>>> 227b6786bd7b9c31bd862d4775f4ceac4ca1d5a1
       });
     },
     // $('#productdataTable').DataTable({
@@ -294,17 +274,6 @@ document.addEventListener("turbo:load", function () {
 
       response.data.map((r) => {
         $(".search_customer_list").append(`
-<<<<<<< HEAD
-                  <tr class="lgi">
-                          <td>${r.id}</td>
-                          <td>${r.customer_name}</td>
-                          <td class="text-end">${r.customer_address || "-"}</td>
-                          <td class="text-end"><button data-id="${
-                            r.id
-                          }"  onclick="change_customer(this)" class="add-product">+</button></td>
-                      </tr>
-                      `);
-=======
                               <tr class="lgi">
                                       <td>${r.id}</td>
                                       <td>${r.customer_name}</td>
@@ -316,7 +285,6 @@ document.addEventListener("turbo:load", function () {
                                       }"  onclick="change_customer(this)" class="add-product">+</button></td>
                                   </tr>
                                   `);
->>>>>>> 227b6786bd7b9c31bd862d4775f4ceac4ca1d5a1
       });
     },
   });
