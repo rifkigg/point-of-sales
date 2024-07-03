@@ -98,20 +98,32 @@ nav {
   margin: 0;
 }
 
+main {
+  margin-bottom: 30px;
+}
+
 table {
   background-color: var(--light-blue2);
 }
 
 .tabel {
-  width: 60%;
+  width: 65%;
 }
 
 .fitur {
-  width: 40%;
+  width: 25%;
 }
 
-.tombol a {
+.tombol {
   width: 100%;
+}
+
+.bg-biru {
+  background-color: var(--blue2);
+}
+
+.p-20 {
+  padding: 20px;
 }
 
 .no-data p {
@@ -128,9 +140,8 @@ table {
 footer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
-  margin: 0 15px;
 }
 
 .btn-logout {
@@ -160,7 +171,7 @@ footer {
 }
 
 .biru {
-  background-color: var(--dark-blue);
+  background-color: var(--blue2);
   padding: 6px 8px;
   color: white;
   width: 10%;
@@ -176,7 +187,7 @@ footer {
 .btn-bayar {
   background-color: #f56e1d;
   padding: 6px 12px;
-  width: 30%;
+  width: 25%;
   height: 90px;
   gap: 10px;
   font-weight: bold;
@@ -187,11 +198,11 @@ footer {
 }
 
 .info {
-  width: 185px;
+  width: 15%;
 }
 
 .fs-4 {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -234,4 +245,8 @@ footer {
 
 .btn-footer:hover {
   text-decoration: none;
+}
+
+.wrap {
+  width: 65%;
 }
