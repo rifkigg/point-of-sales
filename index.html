@@ -53,7 +53,7 @@
 
     <main class="d-flex justify-content-center w-100">
       <div class="tabel">
-        <table class="table table-striped mb-0 fw-500 btn-fitur text-white">
+        <table class="table mb-0 fw-500 btn-fitur text-white">
           <tr>
             <th>No.</th>
             <th>Kode Item</th>
@@ -63,6 +63,36 @@
             <th>Disc.</th>
             <th>Pot.</th>
             <th>Subtotal</th>
+          </tr>
+          <tr class="table-row">
+            <td>1</td>
+            <td>345</td>
+            <td>Potato</td>
+            <td>0</td>
+            <td>10.000</td>
+            <td>0</td>
+            <td>0</td>
+            <td>10.000</td>
+          </tr>
+          <tr class="table-row">
+            <td>2</td>
+            <td>346</td>
+            <td>Doritos</td>
+            <td>0</td>
+            <td>8.000</td>
+            <td>0</td>
+            <td>0</td>
+            <td>8.000</td>
+          </tr>
+          <tr class="table-row">
+            <td>3</td>
+            <td>347</td>
+            <td>Nabati</td>
+            <td>0</td>
+            <td>7.000</td>
+            <td>0</td>
+            <td>0</td>
+            <td>7.000</td>
           </tr>
         </table>
         <div class="no-data"></div>
@@ -283,16 +313,35 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Oke</button>
+          <div class="modal-body">
+            <table>
+              <input type="text" name="search" placeholder="Cari barang..." />
+              <tr>
+                <th>Kode Item</th>
+                <th>Nama Item</th>
+                <th>Harga</th>
+                <th>Stok</th>
+              </tr>
+              <tr>
+                <td>345</td>
+                <td>Potato</td>
+                <td>10.000</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>346</td>
+                <td>Doritos</td>
+                <td>8.000</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>347</td>
+                <td>Nabati</td>
+                <td>7.000</td>
+                <td>15</td>
+              </tr>
+              <p>(Tekan CTRL untuk mencari, tekan Enter untuk memilih)</p>
+            </table>
           </div>
         </div>
       </div>
@@ -322,14 +371,7 @@
           </div>
           <div class="modal-body">...</div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Oke</button>
+            <button type="button" class="btn btn-primary">Simpan</button>
           </div>
         </div>
       </div>
@@ -354,15 +396,25 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <tr>
+              <th>Kode Transaksi</th>
+              <th>Waktu</th>
+              <th>Item</th>
+              <th>Detail</th>
+              <th></th>
+            </tr>
+            <tr>
+              <td>Draft-346276-001</td>
+              <td>2024-07-02</td>
+              <td>0</td>
+              <td>-</td>
+              <td>
+                <button type="button" class="">Resume</button>
+              </td>
+            </tr>
+          </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
             <button type="button" class="btn btn-primary">Oke</button>
           </div>
         </div>
@@ -390,16 +442,9 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Oke</button>
+          <div class="modal-body">
+            <p>Promo Tersedia</p>
+            <p>Tidak ada promo teresedia</p>
           </div>
         </div>
       </div>
@@ -426,16 +471,23 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Oke</button>
+          <div class="modal-body">
+            <table>
+              <input type="text" placeholder="Cari costumer..." />
+              <p>(Tekan CTRL untuk mencari, tekan Enter untuk memilih)</p>
+              <tr>
+                <th>ID Member</th>
+                <th>Nama Pelanggan</th>
+                <th>Alamat</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>cu-093657</td>
+                <td>Joshep</td>
+                <td>-</td>
+                <td>+</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -460,16 +512,13 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">TERIMA KASIH</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Oke</button>
+          <div class="modal-body">
+            <label for="subtotal">Subtotal :</label>
+            <input type="text" name="subtotal" />
+            <label for="total">Total :</label>
+            <input type="text" name="total" />
+            <h2>Total</h2>
+            <h2>Rp 0</h2>
           </div>
         </div>
       </div>
@@ -492,5 +541,6 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script src=""></script>
   </body>
 </html>

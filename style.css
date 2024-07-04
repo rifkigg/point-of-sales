@@ -65,6 +65,11 @@ nav {
   background-color: var(--light-blue2);
 }
 
+.table-row {
+  background-color: var(--dark-grey);
+  color: #000;
+}
+
 .p-10 {
   padding: 10px 20px;
 }
@@ -287,66 +292,4 @@ footer {
 .bayar1 {
   width: 30%;
   padding: 16px 24px;
-}
-
-/* Styling untuk modal */
-.modal-content {
-  border-radius: 10px; /* Sudut elemen modal dibulatkan */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Bayangan lembut untuk efek melayang */
-}
-
-.modal-header {
-  background-color: #007bff; /* Warna latar belakang header modal */
-  color: #fff; /* Warna teks di header modal */
-  border-bottom: none; /* Hapus garis bawah pada header modal */
-  border-radius: 10px 10px 0 0; /* Bulatkan sudut hanya pada bagian atas */
-}
-
-.modal-title {
-  font-size: 1.5rem; /* Ukuran teks judul modal */
-  margin: 0; /* Hapus margin atas dan bawah untuk judul */
-  padding: 15px; /* Padding di dalam header modal */
-}
-
-.modal-body {
-  padding: 20px; /* Padding untuk konten modal */
-}
-
-.modal-footer {
-  background-color: #f0f0f0; /* Warna latar belakang footer modal */
-  border-top: none; /* Hapus garis atas pada footer modal */
-  border-radius: 0 0 10px 10px; /* Bulatkan sudut hanya pada bagian bawah */
-  padding: 15px; /* Padding di dalam footer modal */
-}
-
-.modal-footer button {
-  margin-right: 10px; /* Jarak antara tombol dalam footer modal */
-}
-
-.btn-close {
-  color: #fff; /* Warna ikon tombol close */
-  opacity: 1; /* Opaqueness untuk ikon tombol close */
-}
-
-.btn-close:hover {
-  opacity: 0.8; /* Efek hover untuk tombol close */
-}
-
-/* Styling tambahan sesuai kebutuhan */
-
-.modal-backdrop {
-  opacity: 0.5; /* Opacity untuk latar belakang modal saat muncul */
-  background-color: #000; /* Warna latar belakang modal backdrop */
-}
-
-/* Animasi masuk (fade-in) untuk modal */
-.modal.fade .modal-dialog {
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  transform: translate(0, -50px);
-  opacity: 0;
-}
-
-.modal.fade.show .modal-dialog {
-  transform: translate(0, 0);
-  opacity: 1;
 }
