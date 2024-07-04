@@ -33,18 +33,4 @@ myModal.addEventListener("shown.bs.modal", () => {
   myInput.focus();
 });
 
-// shortcut
-hotkeys("q", function (event, handler) {
-  // Prevent the default refresh event under WINDOWS system
-  event.preventDefault();
-  alert("you pressed F5!");
-});
-
-hotkeys("a", function (event, handler) {
-  //event.srcElement: input
-  //event.target: input
-  if (event.target === "input") {
-    alert("you pressed a!");
-  }
-  alert("you pressed a!");
-});
+// Shortcut JS

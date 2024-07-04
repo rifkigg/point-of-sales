@@ -13,11 +13,6 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <nav class="d-flex m-0">
@@ -53,6 +48,7 @@
 
     <main class="d-flex justify-content-center w-100">
       <div class="tabel">
+        <table class="table mb-0 fw-500 btn-fitur text-white">
         <table class="table mb-0 fw-500 btn-fitur text-white">
           <tr>
             <th>No.</th>
@@ -113,6 +109,9 @@
             />
             CARI BARANG
             <div class="shortcut-btn">(F2)</div></a
+          >
+          <div
+            class="d-flex justify-content-between align-items-stretch w-100 h-100"
           >
           <div
             class="d-flex justify-content-between align-items-stretch w-100 h-100"
@@ -289,13 +288,27 @@
           </div></a
         >
       </div>
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#bayar"
+          class="btn-bayar btn-footer lengkung-bayar d-flex align-items-center justify-content-center"
+          ><div
+            class="info-text d-flex align-items-center justify-content-center gap-10 bayar"
+          >
+            <!-- Flex -->
+            <img src="images/price-icon.svg" width="35px" alt="price" />
+            <p class="m-0 text-decoration-none text-white">BAYAR</p>
+            <p class="shortcut-btn text-white m-0">(F7)</p>
+          </div></a
+        >
+      </div>
     </footer>
     <!-- Modal -->
     <div
       class="modal fade"
       id="search"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      data-bs-keyboard="true"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
@@ -308,10 +321,12 @@
             </h1>
             <button
               type="button"
-              class="btn-close"
+              class="close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
             <table>
@@ -541,6 +556,68 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
-    <script src=""></script>
+    <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+    <script type="text/javascript">
+      hotkeys(
+        "f1,f2,f3,f4,f5,f6,f7,f8,f9,shift+esc",
+        function (event, handler) {
+          switch (handler.key) {
+            case "f1":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#search"]'
+              );
+              modalElement.click(); // Mensimulasikan klik pada elemen yang memicu modal dengan ID 'search'
+              break;
+            case "f2":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#search"]'
+              );
+              modalElement.click(); // Mensimulasikan klik pada elemen yang memicu modal dengan ID 'search'
+              break;
+            case "f3":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#save"]'
+              );
+              modalElement.click(); // Mensimulasikan klik pada elemen yang memicu modal dengan ID 'search'
+              break;
+            case "f4":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#open"]'
+              );
+              modalElement.click(); // Mensimulasikan klik pada elemen yang memicu modal dengan ID 'search'
+              break;
+            case "f5":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#promo"]'
+              );
+              modalElement.click(); // Mensimulasikan klik pada elemen yang memicu modal dengan ID 'search'
+              break;
+            case "f6":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#pembeli"]'
+              );
+              modalElement.click(); // Mensimulasikan klik pada elemen yang memicu modal dengan ID 'search'
+              break;
+            case "f7":
+              var modalElement = document.querySelector(
+                '[data-bs-target="#bayar"]'
+              );
+              modalElement.click();
+              break;
+            case "f8":
+              alert("you pressed f8!");
+              break;
+            case "f9":
+              alert("you pressed f9!");
+              break;
+            case "shift+esc":
+              alert("you pressed shift+esc!");
+              break;
+            default:
+              alert(event);
+          }
+        }
+      );
+    </script>
   </body>
 </html>
