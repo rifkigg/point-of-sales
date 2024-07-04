@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav class="d-flex m-0">
@@ -42,13 +47,12 @@
 
       <div class="total">
         <h3>Total</h3>
-        <h1>0</h1>
+        <h1 id="total">0</h1>
       </div>
     </section>
 
     <main class="d-flex justify-content-center w-100">
       <div class="tabel">
-        <table class="table mb-0 fw-500 btn-fitur text-white">
         <table class="table mb-0 fw-500 btn-fitur text-white">
           <tr>
             <th>No.</th>
@@ -64,13 +68,13 @@
             <td>1</td>
             <td>345</td>
             <td>Potato</td>
+            <td class="d-flex align-items-center justify-content-around"><i id="minus" class="fa-regular fa-circle-minus fa-xl"></i> <p id="nilai">0</p> <i id="tambah" class="fa-regular fa-circle-plus fa-xl"></i></td>
+            <td id="harga">10000</td> 
             <td>0</td>
-            <td>10.000</td>
             <td>0</td>
-            <td>0</td>
-            <td>10.000</td>
+            <td id="total">10.000</td>
           </tr>
-          <tr class="table-row">
+          <!-- <tr class="table-row">
             <td>2</td>
             <td>346</td>
             <td>Doritos</td>
@@ -89,7 +93,7 @@
             <td>0</td>
             <td>0</td>
             <td>7.000</td>
-          </tr>
+          </tr> -->
         </table>
         <div class="no-data"></div>
       </div>
@@ -109,9 +113,6 @@
             />
             CARI BARANG
             <div class="shortcut-btn">(F2)</div></a
-          >
-          <div
-            class="d-flex justify-content-between align-items-stretch w-100 h-100"
           >
           <div
             class="d-flex justify-content-between align-items-stretch w-100 h-100"
@@ -288,21 +289,6 @@
           </div></a
         >
       </div>
-        <a
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#bayar"
-          class="btn-bayar btn-footer lengkung-bayar d-flex align-items-center justify-content-center"
-          ><div
-            class="info-text d-flex align-items-center justify-content-center gap-10 bayar"
-          >
-            <!-- Flex -->
-            <img src="images/price-icon.svg" width="35px" alt="price" />
-            <p class="m-0 text-decoration-none text-white">BAYAR</p>
-            <p class="shortcut-btn text-white m-0">(F7)</p>
-          </div></a
-        >
-      </div>
     </footer>
     <!-- Modal -->
     <div
@@ -313,10 +299,13 @@
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          <div class="modal-header bg-primary">
+            <h1
+              class="modal-title text-white text-center fs-5"
+              id="staticBackdropLabel"
+            >
               Pencarian Barang
             </h1>
             <button
@@ -329,33 +318,40 @@
             </button>
           </div>
           <div class="modal-body">
-            <table>
-              <input type="text" name="search" placeholder="Cari barang..." />
+            <table class="table mb-0 fw-500 btn-fitur text-white">
+              <input
+                class="form-control"
+                type="text"
+                name="search"
+                placeholder="Cari barang..."
+              />
               <tr>
                 <th>Kode Item</th>
                 <th>Nama Item</th>
                 <th>Harga</th>
                 <th>Stok</th>
               </tr>
-              <tr>
+              <tr class="table-row">
                 <td>345</td>
                 <td>Potato</td>
                 <td>10.000</td>
                 <td>20</td>
               </tr>
-              <tr>
+              <tr class="table-row">
                 <td>346</td>
                 <td>Doritos</td>
                 <td>8.000</td>
                 <td>10</td>
               </tr>
-              <tr>
+              <tr class="table-row">
                 <td>347</td>
                 <td>Nabati</td>
                 <td>7.000</td>
                 <td>15</td>
               </tr>
-              <p>(Tekan CTRL untuk mencari, tekan Enter untuk memilih)</p>
+              <p class="shortcut-btn">
+                (Tekan CTRL untuk mencari, tekan Enter untuk memilih)
+              </p>
             </table>
           </div>
         </div>
@@ -365,28 +361,31 @@
     <div
       class="modal fade"
       id="save"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      data-bs-keyboard="true"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          <div class="modal-header bg-primary">
+            <h1
+              class="modal-title text-white text-center fs-5"
+              id="staticBackdropLabel"
+            >
               Konfirmasi Simpan Draft
             </h1>
             <button
               type="button"
-              class="btn-close"
+              class="close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="modal-body">...</div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Simpan</button>
+            <button type="button" class="btn btn-primary w-100">Simpan</button>
           </div>
         </div>
       </div>
@@ -394,43 +393,51 @@
     <div
       class="modal fade"
       id="open"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      data-bs-keyboard="true"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Draft</h1>
+          <div class="modal-header bg-primary">
+            <h1
+              class="modal-title text-white text-center fs-5"
+              id="staticBackdropLabel"
+            >
+              Draft
+            </h1>
             <button
               type="button"
-              class="btn-close"
+              class="close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-            <tr>
-              <th>Kode Transaksi</th>
-              <th>Waktu</th>
-              <th>Item</th>
-              <th>Detail</th>
-              <th></th>
-            </tr>
-            <tr>
-              <td>Draft-346276-001</td>
-              <td>2024-07-02</td>
-              <td>0</td>
-              <td>-</td>
-              <td>
-                <button type="button" class="">Resume</button>
-              </td>
-            </tr>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Oke</button>
+            <table class="table mb-0 fw-500 btn-fitur text-white">
+              <tr>
+                <th>Kode Transaksi</th>
+                <th>Waktu</th>
+                <th>Item</th>
+                <th>Detail</th>
+                <th></th>
+              </tr>
+              <tr class="table-row">
+                <td>Draft-346276-001</td>
+                <td>2024-07-02</td>
+                <td>0</td>
+                <td>-</td>
+                <td>
+                  <button type="button" class="btn btn-primary">
+                    <i class="fa-solid fa-play"></i><br />
+                    Resume
+                  </button>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -438,28 +445,35 @@
     <div
       class="modal fade"
       id="promo"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      data-bs-keyboard="true"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          <div class="modal-header bg-primary">
+            <h1
+              class="modal-title text-white text-center fs-5"
+              id="staticBackdropLabel"
+            >
               Promo Tersedia
             </h1>
             <button
               type="button"
-              class="btn-close"
+              class="close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-            <p>Promo Tersedia</p>
-            <p>Tidak ada promo teresedia</p>
+            <p>
+              <span class="font-weight-bold" style="font-size: 24px">
+                Promo Tersedia </span
+              >Tidak ada promo tersedia
+            </p>
           </div>
         </div>
       </div>
@@ -467,40 +481,50 @@
     <div
       class="modal fade"
       id="pembeli"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      data-bs-keyboard="true"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          <div class="modal-header bg-primary">
+            <h1
+              class="modal-title text-white text-center fs-5"
+              id="staticBackdropLabel"
+            >
               Pencarian Pelanggan
             </h1>
             <button
               type="button"
-              class="btn-close"
+              class="close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-            <table>
-              <input type="text" placeholder="Cari costumer..." />
-              <p>(Tekan CTRL untuk mencari, tekan Enter untuk memilih)</p>
+            <table class="table mb-0 fw-500 btn-fitur text-white">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Cari costumer..."
+              />
+              <p class="shortcut-btn">
+                (Tekan CTRL untuk mencari, tekan Enter untuk memilih)
+              </p>
               <tr>
                 <th>ID Member</th>
                 <th>Nama Pelanggan</th>
                 <th>Alamat</th>
                 <th></th>
               </tr>
-              <tr>
+              <tr class="table-row">
                 <td>cu-093657</td>
                 <td>Joshep</td>
                 <td>-</td>
-                <td>+</td>
+                <td><i class="fa-solid fa-circle-plus fa-xl bg-biru"></i></td>
               </tr>
             </table>
           </div>
@@ -510,30 +534,54 @@
     <div
       class="modal fade"
       id="bayar"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      data-bs-keyboard="true"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Bayar</h1>
+          <div class="modal-header bg-primary">
+            <h1
+              class="modal-title text-white text-center fs-5"
+              id="staticBackdropLabel"
+            >
+              Bayar
+            </h1>
             <button
               type="button"
-              class="btn-close"
+              class="close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-            <label for="subtotal">Subtotal :</label>
-            <input type="text" name="subtotal" />
-            <label for="total">Total :</label>
-            <input type="text" name="total" />
-            <h2>Total</h2>
-            <h2>Rp 0</h2>
+            <div class="d-flex justify-content-between align-items-center">
+              <p>Subtotal</p>
+              <p>0</p>
+            </div>
+            <input
+              type="text"
+              name="total"
+              class="form-control"
+              placeholder="Total:"
+              disabled
+            />
+            <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+              <h2>Total</h2>
+              <h2>Rp 0</h2>
+            </div>
+            <select
+              name="metodePembayaran"
+              id="metodePembayaran"
+              class="form-control"
+            >
+              <option value="BCA">BCA</option>
+              <option value="Tunai">Tunai</option>
+              <option value="QRIS">QRIS</option>
+            </select>
           </div>
         </div>
       </div>

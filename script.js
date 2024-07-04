@@ -26,9 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
     message.setAttribute("colspan", "8"); // Menambahkan atribut colspan
     no_data.appendChild(message);
   }
-
   
 });
+
+document.getElementById('tambah').addEventListener('click', function(){
+  let nilai = parseInt(document.getElementById("nilai").textContent);
+  nilai += 1;
+  document.getElementById('nilai').textContent = nilai;
+})
+
+document.getElementById('minus').addEventListener('click', function(){
+  let nilai = parseInt(document.getElementById("nilai").textContent);
+  nilai -= 1;
+  document.getElementById('nilai').textContent = nilai;
+})
 
 
 //sistem modal
