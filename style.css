@@ -293,3 +293,11 @@ footer {
   width: 30%;
   padding: 16px 24px;
 }
+
+.table td {
+  vertical-align: middle;
+}
+
+.modal-header {
+  text-align: center;
+}

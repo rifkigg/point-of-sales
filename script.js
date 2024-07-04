@@ -26,21 +26,61 @@ document.addEventListener("DOMContentLoaded", function () {
     message.setAttribute("colspan", "8"); // Menambahkan atribut colspan
     no_data.appendChild(message);
   }
-  
 });
 
-document.getElementById('tambah').addEventListener('click', function(){
-  let nilai = parseInt(document.getElementById("nilai").textContent);
+// document.getElementById("tambah").addEventListener("click", function () {
+//   let nilai = parseInt(document.getElementById("nilai").textContent);
+//   nilai += 1;
+//   document.getElementById("nilai").textContent = nilai;
+// });
+
+// document.getElementById("minus").addEventListener("click", function () {
+//   let nilai = parseInt(document.getElementById("nilai").textContent);
+//   nilai -= 1;
+//   document.getElementById("nilai").textContent = nilai;
+// });
+
+// Ambil nilai awal dari local storage atau set ke 0 jika tidak ada
+let nilai = parseInt(localStorage.getItem("nilai")) || 0;
+const harga = parseInt(document.getElementById("harga").textContent) || 1000; // Harga per item, default 1000
+
+// Fungsi untuk update nilai dan total
+function updateNilaiAndTotal() {
+  // Update nilai
+  document.getElementById("nilai").textContent = nilai;
+
+  // Hitung total
+  const total = nilai * harga;
+  localStorage.setItem("total", total); // Simpan total ke local storage
+
+  // Format total to Indonesian Rupiah
+  const formattedTotal = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(total).replace("Rp", "");
+
+  // Ambil semua elemen dengan id total
+  const totalElements = document.querySelectorAll("#total");
+
+  // Ubah isi dari setiap elemen dengan id total menjadi isi dari variable total yang diformat
+  totalElements.forEach(element => {
+    element.textContent = formattedTotal;
+  });
+}
+
+// Tambah event listener untuk tombol tambah
+document.getElementById("tambah").addEventListener("click", function () {
   nilai += 1;
-  document.getElementById('nilai').textContent = nilai;
-})
+  localStorage.setItem("nilai", nilai); // Simpan nilai ke local storage
+  updateNilaiAndTotal();
+});
 
-document.getElementById('minus').addEventListener('click', function(){
-  let nilai = parseInt(document.getElementById("nilai").textContent);
+// Tambah event listener untuk tombol kurang
+document.getElementById("kurang").addEventListener("click", function () {
   nilai -= 1;
-  document.getElementById('nilai').textContent = nilai;
-})
+  localStorage.setItem("nilai", nilai); // Simpan nilai ke local storage
+  updateNilaiAndTotal();
+});
 
+// Panggil fungsi update saat halaman dimuat
+updateNilaiAndTotal();
 
 //sistem modal
 const myModal = document.getElementById("myModal");
@@ -50,3 +90,7 @@ myModal.addEventListener("shown.bs.modal", () => {
   myInput.focus();
 });
 
+// Ambil harga dari tag HTML dan format ke dalam Rupiah
+// const hargaElement = document.getElementById("harga");
+// const hargaValue = parseInt(hargaElement.textContent) || 1000;
+// hargaElement.textContent = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(hargaValue).replace("Rp", "");
