@@ -84,7 +84,9 @@
             CARI BARANG
             <div class="shortcut-btn">(F2)</div></a
           >
-          <div class="d-flex justify-content-between align-items-stretch w-100 h-100">
+          <div
+            class="d-flex justify-content-between align-items-stretch w-100 h-100"
+          >
             <a
               data-bs-toggle="modal"
               data-bs-target="#save"
@@ -197,6 +199,8 @@
         >
         <a
           href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#pembeli"
           class="btn-pelangganumu btn-footer lengkung light-gray d-flex justify-content-center flex-column"
           ><div>
             <p class="m-0 text-decoration-none text-dark">Pelanggan</p>
@@ -211,7 +215,7 @@
         <a
           href="#"
           data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
+          data-bs-target="#promo"
           class="btn-promo btn-footer lengkung light-gray d-flex justify-content-center align-items-center"
           ><div class="d-flex gap-10">
             <!-- Flex -->
@@ -240,20 +244,21 @@
         </div>
       </div>
       <div class="bayar1">
-      <a
-        href="#"
-        data-bs-toggle="modal"
-        data-bs-target="#bayar"
-        class="btn-bayar btn-footer lengkung-bayar d-flex align-items-center justify-content-center"
-        ><div
-          class="info-text d-flex align-items-center justify-content-center gap-10 bayar"
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#bayar"
+          class="btn-bayar btn-footer lengkung-bayar d-flex align-items-center justify-content-center"
+          ><div
+            class="info-text d-flex align-items-center justify-content-center gap-10 bayar"
+          >
+            <!-- Flex -->
+            <img src="images/price-icon.svg" width="35px" alt="price" />
+            <p class="m-0 text-decoration-none text-white">BAYAR</p>
+            <p class="shortcut-btn text-white m-0">(F7)</p>
+          </div></a
         >
-          <!-- Flex -->
-          <img src="images/price-icon.svg" width="35px" alt="price" />
-          <p class="m-0 text-decoration-none text-white">BAYAR</p>
-          <p class="shortcut-btn text-white m-0">(F7)</p>
-        </div></a
-      ></div>
+      </div>
     </footer>
     <!-- Modal -->
     <div
@@ -455,7 +460,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">TERIMA KASIH</div>
           <div class="modal-footer">
             <button
               type="button"
@@ -470,7 +475,6 @@
       </div>
     </div>
 
-   
     <script src="script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script
